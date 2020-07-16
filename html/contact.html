@@ -11,6 +11,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <style>
+::selection {
+  background: #be8227; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #bb841f; /* Gecko Browsers */
+}
+
 .content {
   display: flex;
   justify-content: center;
@@ -21,7 +28,7 @@
 .loader-wrapper {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: rgb(255, 255, 255);
@@ -42,7 +49,7 @@
   vertical-align: top;
   display: inline-block;
   width: 100%;
-  border-radius: 20%;
+  border-radius: 9%;
   background-color: rgb(196, 133, 39);
   animation: loader-inner 2s infinite ease-in;
 }
@@ -63,7 +70,7 @@
 
     /* width */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 4px;
     }
     
     /* Track */
@@ -88,12 +95,16 @@
   <style>
     body,
     h1 {
-      font-family: "Raleway", Arial, sans-serif
+      font-family: "Raleway", Arial, sans-serif;
     }
 
     body {
-      background-color: white;
+      background-color: antiquewhite;
       transition: 0.3s;
+    }
+
+    img {
+      border-radius: 4px;
     }
 
     .dark-mode {
@@ -116,7 +127,7 @@
     }
 
     .zoom:hover {
-      transform: scale(1.1);
+      transform: scale(1.15);
       /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 
     }
@@ -130,35 +141,81 @@
     width: 100%;
     z-index: 9999999;
 }
-  </style>
-  <script>
-    function hideLoader() {
-    $('#loading').hide();
+.alt-wrap { 
+      display: block;
+      position: relative;
+      color: whitesmoke;
+      border-radius: 4px;
+      width: 100%;
+      height: 100%;
+    }
+
+  /* The alt text itself */
+  /* Will be added with js */
+    .alt-wrap p.alt {
+      position: absolute;
+      opacity: 0; /* hide initially */
+      left: 0; right: 0; bottom: 0;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.623);
+      font-size: xx-large;
+      transition: all 300ms ease;
+      transition-delay: 300ms;
+      border-radius: 4px;
+      height: 100%;
+      text-align: center;
+      color: #835715;
+      user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      vertical-align: middle;
+      display: inline-block;
+      padding: 20px;
+    }
+
+  /* Hovering over the wrapper shows its alt p*/
+    .alt-wrap:hover > p.alt { 
+      opacity: 1; 
+      transition-delay: 0.2s;
+    }
+
+    .container {}
+
+  .img-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .img { display: block; }
+  
+  .enlarged {
+    width: auto;
+    height: 95%;
 }
 
-$(window).ready(hideLoader);
+  </style>
 
-// Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
-setTimeout(hideLoader, 20 * 1000);
-
-  </script>
-  <link rel="apple-touch-icon" sizes="180x180" href="media/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="media/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="media/favicons/favicon-16x16.png">
-  <link rel="manifest" href="media/favicons/site.webmanifest">
-  <link rel="mask-icon" href="media/favicons/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="media/favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="favicon.ico">
   <meta name="apple-mobile-web-app-title" content="Art by Gouri">
   <meta name="application-name" content="Art by Gouri">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-config" content="media/favicons/browserconfig.xml">
+  <meta name="msapplication-config" content="browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
-
+<body draggable="false">
+  <script>
+    AOS.init();
+  </script>
   <!-- <div id="loading"></div> -->
   <div style="z-index: 99999;" class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
@@ -168,28 +225,56 @@ setTimeout(hideLoader, 20 * 1000);
 
     <!-- Header -->
     <header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
-      <h1 style="color: rgb(196, 133, 39);" class="w3-xlarge">Art by</h1>
-      <h1 style="" class="w3-animate-opacity">Gouri Bajpai</h1>
+      <h1 style="color: rgb(196, 133, 39);" class="w3-xlarge">art portfolio</h1>
+      <h1 style="letter-spacing: 20px;" class="w3-animate-opacity">gouri bajpai</h1>
 
-      <div class="w3-padding-32">
+      <div style="" class="w3-padding-32">
         <div class="w3-bar w3-border">
-          <a href="index.html" class="w3-bar-item w3-button zoom">Art</a>
-          <a href="about.html" class="w3-bar-item w3-button zoom">About</a>
-          <a href="contact.html" class="w3-bar-item w3-button zoom">Contact</a>
+          <a href="index.html" class="w3-bar-item w3-button zoom">art</a>
+          <a href="about.html" class="w3-bar-item w3-button zoom">about</a>
+          <a href="contact.html" class="w3-bar-item w3-button zoom">contact</a>
         </div>
       </div>
     </header>
 
-   
+    <!-- Photo Grid -->
+    <div class="w3-row-padding" style="margin-bottom:128px;">
+      <div class="w3-third">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img" src="pt1.jpg" alt="<b>Dawn Shore</b><br><br><i>Contact for details</i>" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt2.jpg" alt="Ballerina" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt8.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt4.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt14.jpg" style="width:100%">
+      </div>
+
+      <div class="w3-third">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img" src="pt5.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt6.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt7.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt12.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt9.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt15.jpg" style="width:100%">
+      </div>
+      <div class="w3-third">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img" src="pt9.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt10.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt11.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt3.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt13.jpg" style="width:100%">
+      </div>
+    </div>
+
+    <!-- End Page Content -->
+  </div>
 
   <!-- Footer -->
-  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large">
-    <a href="https://www.facebook.com/gouriabhi"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-    <a href=""><i class="fa fa-instagram w3-hover-opacity"></i></a>
-    <a href=""><i class="fa fa-snapchat w3-hover-opacity"></i></a>
-    <a href=""><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
-    <a href=""><i class="fa fa-twitter w3-hover-opacity"></i></a>
-    <a href=""><i class="fa fa-linkedin w3-hover-opacity"></i><br></a>
+  <footer style="cursor: auto;" class="w3-container w3-padding-64 w3-light-grey w3-center w3-large">
+    <a href="https://www.facebook.com/gouriabhi"><i class="zoom fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href=""><i class="zoom fa fa-instagram w3-hover-opacity"></i></a>
+    <a href=""><i class="fa fa-snapchat w3-hover-opacity zoom"></i></a>
+    <a href=""><i class="fa fa-pinterest-p w3-hover-opacity zoom"></i></a>
+    <a href=""><i class="fa fa-twitter w3-hover-opacity zoom"></i></a>
+    <a href=""><i class="fa fa-linkedin w3-hover-opacity zoom"></i><br></a>
     <a href="//www.dmca.com/Protection/Status.aspx?ID=de79299c-2f79-412b-9eee-342b406de7dd"
       title="DMCA.com Protection Status" class="dmca-badge"> <img
         src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=de79299c-2f79-412b-9eee-342b406de7dd"
@@ -225,7 +310,24 @@ setTimeout(hideLoader, 20 * 1000);
         })
     }
 
-    // document.querySelector('.nosteel').onmousedown = function (event) {
+    document.body.addEventListener("keydown", onkeydown);
+
+    function onkeydown(event) {
+        if (event.ctrlKey === true && event.key==="c") {
+          swal({
+          title: "DO NOT ATTEMPT TO COPY THIS IMAGE",
+          text: "All paintings and artwork showcased on this page are DMCA protected and are intellectual property of their respective artist. Attempting to recreate, use, copy, or distribute these images will result in a violation of intellatual property protection laws, and action will be taken.",
+          icon: "error",
+          dangerMode: true,
+        })        }
+    }
+
+//     Array.prototype.forEach.call(document.querySelector("img"), function (elem) {
+//     elem.addEventListener("click", function () {
+//         elem.classList.toggle("enlarged");
+//     });
+// });
+// document.querySelector('.nosteel').onmousedown = function (event) {
     //   if (event.which == 3) {
     //     swal({
     //       title: "DO NOT ATTEMPT TO COPY THIS IMAGE",
@@ -255,6 +357,25 @@ setTimeout(hideLoader, 20 * 1000);
       }     }); 
  });
 </script> -->
+<!-- <script>
+  // Wrap every .img in a div
+    // 1. For all items with class .img...
+    // 2. Wrap them in a div
+    $(".img").wrap('<div class="alt-wrap"/>');
+  
+  // Add alt text after each .img
+    // 1. For all items with class .img...
+    // 2. Run a function for each of them...
+    // 3. To add a p element after it
+    // 5. Containing that element's alt text
+    $(".img").each(function() {
+      $(this).after('<p class="alt">' + $(this).attr('alt') + '</p>');
+    })
+  
+  // CSS shows/hides the alt text on hover
+  
+    </script> -->
+
 </body>
 
 </html>
