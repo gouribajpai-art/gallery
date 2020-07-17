@@ -210,6 +210,45 @@
   <meta name="theme-color" content="#ffffff">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    
+    input[type=text], input[type=email], select, textarea {
+      width: 100%;
+      padding: 18px;
+      border: 1px solid #ccc;
+      border-radius: 22px;
+      box-sizing: border-box;
+      margin-top: 4px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+    
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    </style>
+    <style>
+        input:focus, textarea:focus, select:focus{
+            outline: none;
+        }
+    </style>
 </head>
 
 <body draggable="false">
@@ -224,7 +263,7 @@
   <div class="w3-content" style="max-width:1500px">
 
     <!-- Header -->
-    <header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
+    <header class="w3-panel w3-center w3-opacity" style="padding:58px 16px">
       <h1 style="color: rgb(196, 133, 39);" class="w3-xlarge">art portfolio</h1>
       <h1 style="letter-spacing: 20px;" class="w3-animate-opacity">gouri bajpai</h1>
 
@@ -237,35 +276,26 @@
       </div>
     </header>
 
-    <!-- Photo Grid -->
-    <div class="w3-row-padding" style="margin-bottom:128px;">
-      <div class="w3-third">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img" src="pt1.jpg" alt="<b>Dawn Shore</b><br><br><i>Contact for details</i>" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt2.jpg" alt="Ballerina" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt8.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt4.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt14.jpg" style="width:100%">
-      </div>
+<div style="background-color: antiquewhite; margin-bottom: 98px; color: darkgray; width: 80%; margin-left: auto; margin-right: auto; outline: none;" class="container w3-center">
+  <form action="https://formsubmit.co/abeerdude@gmail.com" method="POST">
+    <label for="fname">first name</label>
+    <input type="text" id="fname" name="firstname" placeholder="John">
 
-      <div class="w3-third">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img" src="pt5.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt6.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt7.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt12.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt9.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt15.jpg" style="width:100%">
-      </div>
-      <div class="w3-third">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img" src="pt9.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt10.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt11.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt3.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt13.jpg" style="width:100%">
-      </div>
-    </div>
+    <label for="lname">last name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Doe">
 
-    <!-- End Page Content -->
-  </div>
+    <label for="email">your email address</label>
+    <input type="email" id="email" name="email" placeholder="johndoe@gmail.com">
+
+    <label for="subject">subject</label>
+    <input type="text" id="lname" name="_subject" placeholder="I am interested in purchasing the ballerina painting">
+
+    <label for="message">your message</label>
+    <textarea id="message" name="Message" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input style="background: rgb(196, 133, 39);" type="submit" value="Submit">
+  </form>
+</div>
 
   <!-- Footer -->
   <footer style="cursor: auto;" class="w3-container w3-padding-64 w3-light-grey w3-center w3-large">

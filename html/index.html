@@ -11,87 +11,139 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <style>
-::selection {
-  background: #be8227; /* WebKit/Blink Browsers */
-}
-::-moz-selection {
-  background: #bb841f; /* Gecko Browsers */
-}
+    ::selection {
+      background: #be8227;
+      /* WebKit/Blink Browsers */
+    }
 
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  height:100%;
-}
-.loader-wrapper {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgb(255, 255, 255);
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
-.loader {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  border-radius: 20%;
-  position: relative;
-  border: 4px solid #000;
-  animation: loader 2s infinite ease;
-}
-.loader-inner {
-  vertical-align: top;
-  display: inline-block;
-  width: 100%;
-  border-radius: 9%;
-  background-color: rgb(196, 133, 39);
-  animation: loader-inner 2s infinite ease-in;
-}
-@keyframes loader {
-  0% { transform: rotate(0deg);}
-  25% { transform: rotate(180deg);}
-  50% { transform: rotate(180deg);}
-  75% { transform: rotate(360deg);}
-  100% { transform: rotate(360deg);}
-}
-@keyframes loader-inner {
-  0% { height: 0%;}
-  25% { height: 0%;}
-  50% { height: 100%;}
-  75% { height: 100%;}
-  100% { height: 0%;}
-}
+    ::-moz-selection {
+      background: #bb841f;
+      /* Gecko Browsers */
+    }
+
+    .noselect {
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      -khtml-user-select: none;
+      /* Konqueror HTML */
+      -moz-user-select: none;
+      /* Old versions of Firefox */
+      -ms-user-select: none;
+      /* Internet Explorer/Edge */
+      user-select: none;
+      /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .loader-wrapper {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loader {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 20%;
+      position: relative;
+      border: 4px solid #000;
+      animation: loader 2s infinite ease;
+    }
+
+    .loader-inner {
+      vertical-align: top;
+      display: inline-block;
+      width: 100%;
+      border-radius: 9%;
+      background-color: rgb(196, 133, 39);
+      animation: loader-inner 2s infinite ease-in;
+    }
+
+    @keyframes loader {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(180deg);
+      }
+
+      50% {
+        transform: rotate(180deg);
+      }
+
+      75% {
+        transform: rotate(360deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes loader-inner {
+      0% {
+        height: 0%;
+      }
+
+      25% {
+        height: 0%;
+      }
+
+      50% {
+        height: 100%;
+      }
+
+      75% {
+        height: 100%;
+      }
+
+      100% {
+        height: 0%;
+      }
+    }
 
     /* width */
     ::-webkit-scrollbar {
       width: 4px;
     }
-    
+
     /* Track */
     ::-webkit-scrollbar-track {
-    display: none;
+      display: none;
     }
-     
+
     /* Handle */
     ::-webkit-scrollbar-thumb {
-      background: grey; 
+      background: grey;
       border-radius: 10px;
       opacity: 0.5%;
       transition: opacity 0.2s;
     }
-    
+
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
       background: black;
       opacity: 1;
     }
-    </style>
+  </style>
   <style>
     body,
     h1 {
@@ -100,7 +152,7 @@
     }
 
     body {
-      background-color: antiquewhite;
+      background-color: rgb(255, 249, 241);
       transition: 0.3s;
     }
 
@@ -132,17 +184,18 @@
       /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 
     }
-    
+
     #loading {
-    background: url('paint.gif') no-repeat center center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 9999999;
-}
-.alt-wrap { 
+      background: url('paint.gif') no-repeat center center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 9999999;
+    }
+
+    .alt-wrap {
       display: block;
       position: relative;
       color: whitesmoke;
@@ -151,12 +204,15 @@
       height: 100%;
     }
 
-  /* The alt text itself */
-  /* Will be added with js */
+    /* The alt text itself */
+    /* Will be added with js */
     .alt-wrap p.alt {
       position: absolute;
-      opacity: 0; /* hide initially */
-      left: 0; right: 0; bottom: 0;
+      opacity: 0;
+      /* hide initially */
+      left: 0;
+      right: 0;
+      bottom: 0;
       margin: auto;
       background-color: rgba(255, 255, 255, 0.623);
       font-size: xx-large;
@@ -175,27 +231,28 @@
       padding: 20px;
     }
 
-  /* Hovering over the wrapper shows its alt p*/
-    .alt-wrap:hover > p.alt { 
-      opacity: 1; 
+    /* Hovering over the wrapper shows its alt p*/
+    .alt-wrap:hover>p.alt {
+      opacity: 1;
       transition-delay: 0.2s;
     }
 
     .container {}
 
-  .img-wrap {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
+    .img-wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
 
-  .img { display: block; }
-  
-  .enlarged {
-    width: auto;
-    height: 95%;
-}
+    .img {
+      display: block;
+    }
 
+    .enlarged {
+      width: auto;
+      height: 95%;
+    }
   </style>
 
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -241,27 +298,43 @@
     <!-- Photo Grid -->
     <div class="w3-row-padding" style="margin-bottom:128px;">
       <div class="w3-third">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img" src="pt1.jpg" alt="<b>Dawn Shore</b><br><br><i>Contact for details</i>" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt2.jpg" alt="Ballerina" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt8.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt4.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt14.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img noselect"
+          src="pt1.jpg" alt="<b>Dawn Shore</b><br><br><i>Contact for details</i>" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt2.jpg" alt="Ballerina" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt8.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt4.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt14.jpg" style="width:100%">
       </div>
 
       <div class="w3-third">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img" src="pt5.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt6.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt7.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt12.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt9.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt15.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt6.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt7.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt12.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt9.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img noselect"
+          src="pt5.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt15.jpg" style="width:100%">
       </div>
       <div class="w3-third">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img" src="pt9.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt10.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt11.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt3.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img" src="pt13.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img noselect"
+          src="pt9.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt13.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt10.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt11.jpg" style="width:100%">
+        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+          src="pt3.jpg" style="width:100%">
       </div>
     </div>
 
@@ -290,12 +363,13 @@
         document.write(' Gouri Bajpai - All Rights Reserved.');
       </script>
     </div><br><br>
-    <button style="width: auto; height: auto; border-radius: 3%;" class="w3-button w3-black w3-opacity" id="darkbutt" onclick="darkmode();">Toggle night mode</button>
+    <button style="width: auto; height: auto; border-radius: 3%;" class="w3-button w3-black w3-opacity" id="darkbutt"
+      onclick="darkmode();">Toggle night mode</button>
   </footer>
 
   <script src="html/assets/js/main.js"></script>
   <script>
-     document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('contextmenu', event => event.preventDefault());
 
     function darkmode() {
       var element = document.body;
@@ -304,23 +378,24 @@
 
     function nostil() {
       swal({
-          title: "DO NOT ATTEMPT TO COPY THIS IMAGE",
-          text: "All paintings and artwork showcased on this page are DMCA protected and are intellectual property of their respective artist. Attempting to recreate, use, copy, or distribute these images will result in a violation of intellatual property protection laws, and action will be taken.",
-          icon: "error",
-          dangerMode: true,
-        })
+        title: "DO NOT ATTEMPT TO COPY THIS IMAGE",
+        text: "All paintings and artwork showcased on this page are DMCA protected and are intellectual property of their respective artist. Attempting to recreate, use, copy, or distribute these images will result in a violation of intellatual property protection laws, and action will be taken.",
+        icon: "error",
+        dangerMode: true,
+      })
     }
 
     document.body.addEventListener("keydown", onkeydown);
 
     function onkeydown(event) {
-        if (event.ctrlKey === true && event.key==="c") {
-          swal({
+      if (event.ctrlKey === true && event.key === "c") {
+        swal({
           title: "DO NOT ATTEMPT TO COPY THIS IMAGE",
           text: "All paintings and artwork showcased on this page are DMCA protected and are intellectual property of their respective artist. Attempting to recreate, use, copy, or distribute these images will result in a violation of intellatual property protection laws, and action will be taken.",
           icon: "error",
           dangerMode: true,
-        })        }
+        })
+      }
     }
 
 //     Array.prototype.forEach.call(document.querySelector("img"), function (elem) {
@@ -340,12 +415,12 @@
     //   }
     // }
   </script>
-      <script>
-        $(window).on("load",function(){
-          $(".loader-wrapper").fadeOut("slow");
-        });
-    </script>
-<!-- <script>
+  <script>
+    $(window).on("load", function () {
+      $(".loader-wrapper").fadeOut("slow");
+    });
+  </script>
+  <!-- <script>
   $(document).ready(function() {
      $(".nosteel").on("contextmenu",function(){
         swal({
@@ -358,7 +433,7 @@
       }     }); 
  });
 </script> -->
-<!-- <script>
+  <!-- <script>
   // Wrap every .img in a div
     // 1. For all items with class .img...
     // 2. Wrap them in a div
