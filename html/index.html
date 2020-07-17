@@ -119,9 +119,11 @@
         height: 0%;
       }
     }
+
     html {
-  scroll-behavior: smooth;
-}
+      scroll-behavior: smooth;
+    }
+
     /* width */
     ::-webkit-scrollbar {
       width: 6px;
@@ -259,7 +261,7 @@
       height: 95%;
     }
   </style>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links
@@ -286,44 +288,52 @@ $(document).ready(function(){
   });
 });
 </script> -->
-<style>
-  body {}
-  * {box-sizing: border-box;}
-  
-  input[type=text], input[type=email], select, textarea {
-    width: 100%;
-    padding: 18px;
-    border: 1px solid #ccc;
-    border-radius: 22px;
-    box-sizing: border-box;
-    margin-top: 4px;
-    margin-bottom: 16px;
-    resize: vertical;
-  }
-  
-  input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-  
-  .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
+  <style>
+    body {}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text],
+    input[type=email],
+    select,
+    textarea {
+      width: 100%;
+      padding: 18px;
+      border: 1px solid #ccc;
+      border-radius: 22px;
+      box-sizing: border-box;
+      margin-top: 4px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
   </style>
   <style>
-      input:focus, textarea:focus, select:focus{
-          outline: none;
-      }
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+    }
   </style>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -410,42 +420,56 @@ $(document).ready(function(){
     <hr style="width: 82vw; margin-left: auto; margin-right: auto; margin-bottom: 18vh; opacity: 0.8;">
     <div style="margin-bottom: 0px;" id="aboutme">&nbsp;</div>
 
-  <!-- about me -->
+    <!-- about me -->
     <div style="margin-bottom: 30vh; margin-top: 10vh;">
-    <div class="clearfix w3-auto">
-      <span class="w3-jumbo w3-margin w3-center" style="text-align: center; display: block; margin: 0 auto;">about me</span><br>
-      <video style="outline: none; border-radius: 18px; width: auto; max-width: 300px; display: block ;margin: 0 auto; margin-bottom: 3% " autoplay loop>
+      <div class="clearfix w3-auto">
+        <span class="w3-jumbo w3-margin w3-center" style="text-align: center; display: block; margin: 0 auto;">about
+          me</span><br>
+        <video
+          style="outline: none; border-radius: 18px; width: auto; max-width: 300px; display: block ;margin: 0 auto; margin-bottom: 3% "
+          autoplay loop>
           <source src="mom.webm" type="video/webm">
         </video>
-                <span style="margin: 0 auto; margin-bottom: 10vh; margin-left: auto; margin-right: auto; display: block ;text-align: center; padding: 12px;" class="w3-xlarge">A creative individual and proud mom of two children and a Siberian Husky puppy. Painting has been my way of expressing myself ever since I was a young child; the paintbrush has always been my connection from reality into an alternate reality where I can freely express myself and feel blissful, disconnected from all external distractions and problems. Every painting touched by the paintbrush in my hand is detailed until is reaches my personal level of perfection. I hope that other people find my work as detailed and breathtaking as my family and I do.</span> 
+        <span
+          style="margin: 0 auto; margin-bottom: 10vh; margin-left: auto; margin-right: auto; display: block ;text-align: center; padding: 12px;"
+          class="w3-xlarge">A creative individual and proud mom of two children and a Siberian Husky puppy. Painting has
+          been my way of expressing myself ever since I was a young child; the paintbrush has always been my connection
+          from reality into an alternate reality where I can freely express myself and feel blissful, disconnected from
+          all external distractions and problems. Every painting touched by the paintbrush in my hand is detailed until
+          is reaches my personal level of perfection. I hope that other people find my work as detailed and breathtaking
+          as my family and I do.</span>
+      </div>
     </div>
-  </div>
-<hr style="width: 90vw; margin-left: auto; margin-right: auto; opacity: 0;">
-<!-- contact -->
-<div style="margin-bottom: 40px;" id="contact">&nbsp;</div>
-<span class="w3-jumbo w3-margin w3-center" style="text-align: center; display: block; margin: 0 auto;">contact me</span><br>
-<!-- <div id="contact"> -->
-<div style="background-color: #976a25; margin-bottom: 98px; color: darkgray; width: 80%; margin-left: auto; margin-right: auto; outline: none; border-radius: 2%;" class="container w3-center">
-  <form action="https://formsubmit.co/abeerdude@gmail.com" method="POST">
-    <label for="fname">first name</label>
-    <input type="text" id="fname" name="firstname" placeholder="John">
+    <hr style="width: 90vw; margin-left: auto; margin-right: auto; opacity: 0;">
+    <!-- contact -->
+    <div style="margin-bottom: 40px;" id="contact">&nbsp;</div>
+    <span class="w3-jumbo w3-margin w3-center" style="text-align: center; display: block; margin: 0 auto;">contact
+      me</span><br>
+    <!-- <div id="contact"> -->
+    <div
+      style="background-color: #976a25; margin-bottom: 98px; color: darkgray; width: 80%; margin-left: auto; margin-right: auto; outline: none; border-radius: 2%;"
+      class="container w3-center">
+      <form action="https://formsubmit.co/abeerdude@gmail.com" method="POST">
+        <label for="fname">first name</label>
+        <input type="text" id="fname" name="firstname" placeholder="John">
 
-    <label for="lname">last name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Doe">
+        <label for="lname">last name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Doe">
 
-    <label for="email">your email address</label>
-    <input type="email" id="email" name="email" placeholder="johndoe@gmail.com">
+        <label for="email">your email address</label>
+        <input type="email" id="email" name="email" placeholder="johndoe@gmail.com">
 
-    <label for="subject">subject</label>
-    <input type="text" id="lname" name="_subject" placeholder="I am interested in purchasing the ballerina painting">
+        <label for="subject">subject</label>
+        <input type="text" id="lname" name="_subject"
+          placeholder="I am interested in purchasing the ballerina painting">
 
-    <label for="message">your message</label>
-    <textarea id="message" name="Message" placeholder="Write something.." style="height:200px"></textarea>
+        <label for="message">your message</label>
+        <textarea id="message" name="Message" placeholder="Write something.." style="height:200px"></textarea>
 
-    <input class="w3-btn" style="background: rgb(196, 133, 39);" type="submit" value="Submit">
-  </form>
-</div>
-<!-- </div> -->
+        <input class="w3-btn" style="background: rgb(196, 133, 39);" type="submit" value="Submit">
+      </form>
+    </div>
+    <!-- </div> -->
     <!-- End Page Content -->
   </div>
 
@@ -523,7 +547,7 @@ $(document).ready(function(){
     //   }
     // }
 
-    
+
   </script>
   <script>
     $(window).on("load", function () {
