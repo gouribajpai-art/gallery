@@ -6,9 +6,11 @@
   <title>Art by Gouri Bajpai</title>
   <link rel=¨stylesheet¨ type=¨text/css¨ href=¨html/assets/css/main.css¨>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <style>
     ::selection {
@@ -327,6 +329,17 @@ $(document).ready(function(){
       background-color: #f2f2f2;
       padding: 20px;
     }
+
+    .hidden
+{
+    opacity:0;
+    transition: 0.5s;
+}
+
+.fade-in-element
+{
+    opacity:1;
+}
   </style>
   <style>
     input:focus,
@@ -378,42 +391,42 @@ $(document).ready(function(){
     <!-- Photo Grid -->
     <div id="" class="w3-row-padding" style="margin-bottom:1vh;">
       <div class="w3-third">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img noselect"
+        <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img noselect"
           src="pt1.jpg" alt="<b>Dawn Shore</b><br><br><i>Contact for details</i>" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt2.jpg" alt="Ballerina" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt8.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt4.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt14.jpg" style="width:100%">
       </div>
 
       <div class="w3-third">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt6.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt14.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt12.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt9.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img noselect"
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img noselect"
           src="pt5.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt15.jpg" style="width:100%">
       </div>
       <div class="w3-third">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img noselect"
+        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false" loading="eager" class="nosteel img noselect"
           src="pt9.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt13.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt10.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt11.jpg" style="width:100%">
-        <img oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
+        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false" loading="lazy" class="nosteel img noselect"
           src="pt3.jpg" style="width:100%">
       </div>
     </div>
@@ -427,10 +440,12 @@ $(document).ready(function(){
           me</span><br>
         <video
           style="outline: none; border-radius: 18px; width: auto; max-width: 300px; display: block ;margin: 0 auto; margin-bottom: 3% "
+          data-aos="flip-up"
           autoplay loop>
           <source src="mom.webm" type="video/webm">
         </video>
         <span
+          data-aos="zoom-in-up"
           style="margin: 0 auto; margin-bottom: 10vh; margin-left: auto; margin-right: auto; display: block ;text-align: center; padding: 12px;"
           class="w3-large">A creative individual and proud mom of two children and a Siberian Husky puppy. Painting has
           been my way of expressing myself ever since I was a young child; the paintbrush has always been my connection
@@ -446,9 +461,7 @@ $(document).ready(function(){
     <span class="w3-jumbo w3-margin w3-center" style="text-align: center; display: block; margin: 0 auto;">contact
       me</span><br>
     <!-- <div id="contact"> -->
-    <div
-      style="background-color: #976a25; margin-bottom: 98px; color: darkgray; width: 80%; margin-left: auto; margin-right: auto; outline: none; border-radius: 2%;"
-      class="container w3-center">
+    <div data-aos="fade-up" style="background-color: #976a25; margin-bottom: 98px; color: darkgray; width: 80%; margin-left: auto; margin-right: auto; outline: none; border-radius: 2%;" class="container w3-center">
       <form action="https://formsubmit.co/abeerdude@gmail.com" method="POST">
         <label for="fname">first name</label>
         <input type="text" id="fname" name="firstname" placeholder="John">
@@ -495,7 +508,7 @@ $(document).ready(function(){
         document.write(' Gouri Bajpai - All Rights Reserved.');
       </script>
     </div><br><br>
-    <button style="width: auto; height: auto; border-radius: 3%;" class="w3-button w3-black w3-opacity" id="darkbutt"
+    <button style="width: auto; height: auto; border-radius: 3%; display: none;" class="w3-button w3-black w3-opacity" id="darkbutt"
       onclick="darkmode();">Toggle night mode</button>
   </footer>
 
@@ -585,7 +598,35 @@ $(document).ready(function(){
   // CSS shows/hides the alt text on hover
   
     </script> -->
+<!-- <script>
+(function() {
+  var elements;
+  var windowHeight;
 
+  function init() {
+    elements = document.querySelectorAll('.hidden');
+    windowHeight = window.innerHeight;
+  }
+
+  function checkPosition() {
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      var positionFromTop = elements[i].getBoundingClientRect().top;
+
+      if (positionFromTop - windowHeight <= 0) {
+        element.classList.add('fade-in-element');
+        element.classList.remove('hidden');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', checkPosition);
+  window.addEventListener('resize', init);
+
+  init();
+  checkPosition();
+})();
+</script> -->
 </body>
 
 </html>
