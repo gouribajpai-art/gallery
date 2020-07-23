@@ -165,7 +165,6 @@
     body,
     h1 {
       font-family: "Raleway", Arial, sans-serif;
-      cursor: url('data:image/x-icon;base64,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'), auto;
     }
 
     body {
@@ -267,6 +266,7 @@
 
     .img {
       display: block;
+      cursor: alias;
     }
 
     .enlarged {
@@ -386,8 +386,7 @@ $(document).ready(function(){
     <!-- Header -->
     <header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
       <h1 style="color: rgb(196, 133, 39);" class="w3-xlarge">art portfolio</h1>
-      <h1
-        style="letter-spacing: auto; font-family: Brush Script MT, Signature Regular, Tangerine;"
+      <h1 style="letter-spacing: auto; font-family: Brush Script MT, Signature Regular, Tangerine;"
         class="w3-animate-opacity w3-jumbo">gouri bajpai
       </h1>
 
@@ -404,50 +403,66 @@ $(document).ready(function(){
     <div id="" class="w3-row-padding" style="margin-bottom:1vh;">
       <div class="w3-third">
         <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false"
-          class="nosteel img noselect" src="pt1.jpg" alt="<b>Dawn Shore</b><br><br><i>Contact for details</i>"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt1.jpg"
+          alt="<b>Dawn Shore</b><br><br><i>Contact for details</i>" style="width:100%">
+        <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt2.jpg"
+          alt="Ballerina" style="width:100%">
+        <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt8.jpg"
           style="width:100%">
         <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false"
-          class="nosteel img noselect" src="pt2.jpg" alt="Ballerina" style="width:100%">
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt4.jpg"
+          style="width:100%">
         <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false"
-          class="nosteel img noselect" src="pt8.jpg" style="width:100%">
-        <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false"
-          class="nosteel img noselect" src="pt4.jpg" style="width:100%">
-        <img data-aos="fade-right" oncontextmenu="nostil(); return false;" draggable="false"
-          class="nosteel img noselect" src="pt14.jpg" style="width:100%">
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt14.jpg"
+          style="width:100%">
       </div>
 
       <div class="w3-third">
-        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" class="nosteel img noselect"
-          src="pt6.jpg" style="width:100%">
-        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" class="nosteel img noselect"
-          src="pt14.jpg" style="width:100%">
-        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" class="nosteel img noselect"
-          src="pt12.jpg" style="width:100%">
-        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" class="nosteel img noselect"
-          src="pt9.jpg" style="width:100%">
-        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" class="nosteel img noselect"
-          src="pt5.jpg" style="width:100%">
-        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false" class="nosteel img noselect"
-          src="pt15.jpg" style="width:100%">
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt6.jpg"
+          style="width:100%">
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt14.jpg"
+          style="width:100%">
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt12.jpg"
+          style="width:100%">
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt9.jpg"
+          style="width:100%">
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt5.jpg"
+          style="width:100%">
+        <img data-aos="fade-up" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt15.jpg"
+          style="width:100%">
       </div>
       <div class="w3-third">
-        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false" class="nosteel img noselect"
-          src="pt9.jpg" style="width:100%">
-        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false" class="nosteel img noselect"
-          src="pt13.jpg" style="width:100%">
-        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false" class="nosteel img noselect"
-          src="pt10.jpg" style="width:100%">
-        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false" class="nosteel img noselect"
-          src="pt11.jpg" style="width:100%">
-        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false" class="nosteel img noselect"
-          src="pt3.jpg" style="width:100%">
+        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt9.jpg"
+          style="width:100%">
+        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com/gouribajpai?i=182286-3';" class="nosteel img noselect" src="pt13.jpg"
+          style="width:100%">
+        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt10.jpg"
+          style="width:100%">
+        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt11.jpg"
+          style="width:100%">
+        <img data-aos="fade-left" oncontextmenu="nostil(); return false;" draggable="false"
+          onclick="window.location.href='https://www.artpal.com';" class="nosteel img noselect" src="pt3.jpg"
+          style="width:100%">
       </div>
     </div>
     <hr style="width: 82vw; margin-left: auto; margin-right: auto; margin-bottom: 18vh; opacity: 0.8;">
     <div style="margin-bottom: 0px;" id="aboutme">&nbsp;</div>
 
     <!-- about me -->
-    <div style="margin-bottom: 30vh; margin-top: 15px;">
+    <div
+      style="margin-bottom: 30vh; margin-top: 15px; cursor: url('data:image/x-icon;base64,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'), auto;">
       <div class="clearfix w3-auto">
         <span class="w3-jumbo w3-margin w3-center" style="text-align: center; display: block; margin: 0 auto;">about
           me</span><br>
@@ -455,7 +470,7 @@ $(document).ready(function(){
           style="outline: none; border-radius: 18px; width: auto; max-width: 300px; display: block ;margin: 0 auto; margin-bottom: 3% "
           data-aos="flip-up" autoplay loop>
           <source src="mom.webm" type="video/webm">
-            <img src="mom.png" title="Your browser does not support the WebM format.">
+          <img src="mom.png" title="Your browser does not support the WebM format.">
         </video>
         <span data-aos="zoom-in-up"
           style="margin: 0 auto; margin-bottom: 10vh; margin-left: auto; margin-right: auto; display: block ;text-align: center; padding: 12px;"
@@ -493,7 +508,7 @@ $(document).ready(function(){
         <label for="message">your message</label>
         <textarea id="message" name="Message" placeholder="Write something.." style="height:200px"></textarea>
 
-        <input class="w3-btn" style="background: rgb(196, 133, 39);" type="submit" value="Submit">
+        <input class="w3-btn zoom" style="background: rgb(196, 133, 39);" type="submit" value="Submit">
       </form>
     </div>
     <!-- </div> -->
